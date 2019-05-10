@@ -41,7 +41,7 @@ subparagraph | (A), (B), ... | 1014(b)(9)(A): "annuities described in section 72
 clause | (i), (ii), ... | 1(g)(2)(A)(i): "has not attained age 18..."
 subclause | (I), (II), ... | 1(g)(2)(A)(i)(I): "has attained age 18 before..."
 
-These form the directories in each of the data branches. The text of the statutes themselves are stored in files representing each of the components of the text. The components are shown in the table below. Note that not all components are substantive law.
+These form the directories in each of the data branches. The text of the statutes themselves are stored in files corresponding to each of the components of the text. The components are shown in the table below. Note that not all components are substantive law---they are for purposes of making the text easy to read but effectively ignored when the statute is construed by courts.
 
 Component | Description | Substantive Law?
 ------- | ---- | ----
@@ -71,6 +71,20 @@ s1/g/2
 └── heading: "Child to whom subsection applies"
 ```
 
+### Parsing Your Own Statutes
+
+The code to parse statutes are in the `master` branch. Download the XML versions of the U.S. Code you wish to parse from the following links
+
+* [Current Versions](http://uscode.house.gov/download/download.shtml)
+* [Previous Versions](http://uscode.house.gov/download/priorreleasepoints.htm)
+
+Unzip the files and run the parser (while in the directory) using the following command. Make sure the specified output directory exists
+
+```
+> python -m parser.cli <file to parse.xml> -o <output directory>
+```
+
+Create a new branch by forking an existing data branch. Delete all files and copy in the parsed files.
 
 ## Example Queries
 
@@ -106,10 +120,43 @@ t26/s1/j/1/heading
 ...
 ```
 
+Listing changes on specific provisions
+```
+> git diff --diff-filter=M pre-tcja:t26/s163/j/heading..post-tcja:t26/s163/j/heading
 
+diff --git a/pre-tcja:t26/s163/j/heading..post-tcja:t26/s163/j/heading b/post-tcja:t26/s163/j/heading
+index 47d2c3b..c5fa312 100644
+--- a/pre-tcja:t26/s163/j/heading..post-tcja:t26/s163/j/heading
++++ b/post-tcja:t26/s163/j/heading
+@@ -1 +1 @@
+-Limitation on deduction for interest on certain indebtedness
++Limitation on business interest
+```
 
+Listing provisions with the most changes (see [--dirstat parameter](https://git-scm.com/docs/git-diff) for additional options)
+```
+> git diff --dirstat=lines,cumulative,1 pre-tcja:t26..post-tcja:t26 | sort -r
 
-## Interesting Statistics
+   3.8% s168/
+   3.6% s965/
+   2.8% s199A/
+   2.5% s168/k/
+   2.4% s451/
+   1.8% s59A/
+   1.8% s162/
+   1.6% s45Q/
+   1.6% s168/k/6/
+   1.6% s163/
+   1.4% s1/
+   1.3% s163/j/
+   1.3% s1400Z–2/
+   1.1% s6225/
+   1.0% s807/
+   1.0% s199A/g/
+```
+
+## Statistics
+
 
 ## Next Steps
 
