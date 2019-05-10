@@ -190,8 +190,8 @@ Listing provisions with the most changes (see [--dirstat parameter](https://git-
 
 Statistic | Command | Value
 ----------| --------| ---------
-Number of subsections added | `git diff --name-only --diff-filter=A pre-tcja:t26..post-tcja:t26 | grep  -E "s[0-9]+/[a-z]+/content"` | 69
-Number of sections affected | `git diff --name-only pre-tcja:t26..post-tcja:t26 | awk -F'/' 'NF!=1{print $1}' | uniq | wc -l` | 526
+Number of subsections added | `git diff --name-only --diff-filter=A pre-tcja:t26..post-tcja:t26 \| grep  -E "s[0-9]+/[a-z]+/content"` | 69
+Number of sections affected | `git diff --name-only pre-tcja:t26..post-tcja:t26 | awk -F'/' 'NF!=1{print $1}' \| uniq \| wc -l` | 526
 Section with the most change | `git diff --dirstat=lines,cumulative pre-tcja:t26..post-tcja:t26` | [§ 168](https://www.law.cornell.edu/uscode/text/26/168)
 
 
