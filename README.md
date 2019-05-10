@@ -119,6 +119,37 @@ t26/s1/j/1/chapeau
 t26/s1/j/1/heading
 ...
 ```
+Listing all provisions that were added
+```
+> git diff --name-only --diff-filter=A pre-tcja:t26..post-tcja:t26 | grep  -E "s[0-9]+/[a-z]+/content"
+s1031/h/content
+s1061/b/content
+s1061/e/content
+s1061/f/content
+s11/b/content
+s118/c/content
+s1248/k/content
+s1271/c/content
+s1286/e/content
+s1371/f/content
+s1561/a/content
+s1561/b/content
+s196/d/content
+s217/k/content
+s247/a/content
+s247/d/content
+s250/c/content
+s3111/d/content
+s3221/c/content
+s423/d/content
+s447/d/content
+s4481/d/content
+s451/e/content
+s451/f/content
+s471/d/content
+s4960/b/content
+...
+```
 
 Listing changes on specific provisions
 ```
@@ -156,6 +187,13 @@ Listing provisions with the most changes (see [--dirstat parameter](https://git-
 ```
 
 ## Statistics
+
+Statistic | Command | Value
+----------| --------| ---------
+Number of subsections added | `git diff --name-only --diff-filter=A pre-tcja:t26..post-tcja:t26 | grep  -E "s[0-9]+/[a-z]+/content"` | 69
+Number of sections affected | `git diff --name-only pre-tcja:t26..post-tcja:t26 | awk -F'/' 'NF!=1{print $1}' | uniq | wc -l` | 526
+Section with the most change | `git diff --dirstat=lines,cumulative pre-tcja:t26..post-tcja:t26` | [§ 168](https://www.law.cornell.edu/uscode/text/26/168)
+
 
 
 ## Next Steps
