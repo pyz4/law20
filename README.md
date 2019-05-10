@@ -41,7 +41,7 @@ subparagraph | (A), (B), ... | 1014(b)(9)(A): "annuities described in section 72
 clause | (i), (ii), ... | 1(g)(2)(A)(i): "has not attained age 18..."
 subclause | (I), (II), ... | 1(g)(2)(A)(i)(I): "has attained age 18 before..."
 
-These form the directories in each of the data branches. The text of the statutes themselves are stored in files corresponding to each of the components of the text. The components are shown in the table below. Note that not all components are substantive law---they are for purposes of making the text easy to read but effectively ignored when the statute is construed by courts.
+These form the directories in each of the data branches. The text of the statutes themselves are stored in files corresponding to each of the components of the text. The components are shown in the table below. Note that some components are not substantive law---they are for purposes of making the text easy to read but effectively ignored when the statute is construed by courts.
 
 Component | Description | Substantive Law?
 ------- | ---- | ----
