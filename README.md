@@ -1,5 +1,21 @@
 # Law 2.0 Spring 2019 Final Project - Peter Zhu
-Title 26 of the United States Code before and after the TCJA
+A repository designed to leverage git for comparing changes in statutes over time. Title 26 of the United States Code before and after the passage of the Tax Cut and Jobs Act (TCJA) is used here as proof of concept.
+
+## Motivation
+
+
+## Getting Started
+
+This repository holds several branches, each containing a version of the Internal Revenue Code. The branches and their descriptions are as follows:
+
+- pre-tcja (Internal Revenue Code as of January 2018)
+- post-tcja (Internal Revenue Code as of April 2019)
+
+
+## Example Queries
+
+
+## Interesting Statistics
 
 This repository holds several branches, each containing a version of the Internal Revenue Code. The branches and their descriptions are as follows:
 
