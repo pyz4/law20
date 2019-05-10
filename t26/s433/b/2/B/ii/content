@@ -1,9 +1,0 @@
-in the case of a plan which comes into existence after 
-
-<date date="1974-01-01" xmlns="http://xml.house.gov/schemas/uslm/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">January 1, 1974</date>
-
-, but before the first day of the first plan year beginning after 
-
-<date date="2013-12-31" xmlns="http://xml.house.gov/schemas/uslm/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">December 31, 2013</date>
-
-, the unfunded past service liability under the plan on the first day of the first plan year to which section 412 applies, over a period of 30 plan years,
