@@ -88,7 +88,7 @@ Create a new branch by forking an existing data branch. Delete all files and cop
 
 ## Example Queries
 
-Tracking all changes between two data branches.
+### Tracking all changes between two data branches.
 ```
 > git diff --name-only --diff-filter=A pre-tcja..post-tcja
 
@@ -119,7 +119,7 @@ t26/s1/j/1/chapeau
 t26/s1/j/1/heading
 ...
 ```
-Listing all provisions that were added
+### Listing all provisions that were added
 ```
 > git diff --name-only --diff-filter=A pre-tcja:t26..post-tcja:t26 | grep  -E "s[0-9]+/[a-z]+/content"
 s1031/h/content
@@ -151,7 +151,7 @@ s4960/b/content
 ...
 ```
 
-Listing changes on specific provisions
+### Listing changes on specific provisions
 ```
 > git diff --diff-filter=M pre-tcja:t26/s163/j/heading..post-tcja:t26/s163/j/heading
 
@@ -191,10 +191,12 @@ Listing provisions with the most changes (see [--dirstat parameter](https://git-
 Statistic | Command | Value
 ----------| --------| ---------
 Number of subsections added | `git diff --name-only --diff-filter=A pre-tcja:t26..post-tcja:t26 \| grep  -E "s[0-9]+/[a-z]+/content"` | 69
-Number of sections affected | `git diff --name-only pre-tcja:t26..post-tcja:t26 | awk -F'/' 'NF!=1{print $1}' \| uniq \| wc -l` | 526
+Number of sections affected | `git diff --name-only pre-tcja:t26..post-tcja:t26 \| awk -F'/' 'NF!=1{print $1}' \| uniq \| wc -l` | 526
 Section with the most change | `git diff --dirstat=lines,cumulative pre-tcja:t26..post-tcja:t26` | [§ 168](https://www.law.cornell.edu/uscode/text/26/168)
-
-
 
 ## Next Steps
 
+This project is currently a working proof of concept with many areas worth exploring from here. Below are only a few ideas:
+
+* Automatically update this repo with the release of each update of the U.S. Code.
+* Add visualization dashboards allowing users to pull up any provision and compare across time
