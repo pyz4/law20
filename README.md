@@ -5,7 +5,7 @@ A repository designed to leverage `git` for comparing changes in statutes over t
 
 The law [changes all the time](http://uscode.house.gov/download/priorreleasepoints.htm). As of May 2019, Title 26, the Internal Revenue Code, has already iterated twice in the year to date. For lawyers to identify what changed in each iteration is a significant burden. The IRC has over 2100 operating sections, each with their own subsections, paragraphs, subparagraphs, and so on. 
 
-Luckily, the U.S. Legislature publishes all titles of its Code in XML format, both [current](http://uscode.house.gov/download/download.shtml) and [previous](http://uscode.house.gov/download/priorreleasepoints.htm) versions. But even so, a simple diff-check between XML files will be fruitless. A diff of the contents still require plenty of effort to determine if the changes were as small as fixing grammar or adding/removing entire sections.
+Luckily, the U.S. Legislature publishes all titles of its Code in XML format, both [current](http://uscode.house.gov/download/download.shtml) and [previous](http://uscode.house.gov/download/priorreleasepoints.htm) versions. But even so, a simple diff-check (or redline) between XML files will be fruitless. A diff of the contents still require plenty of effort to determine if the changes were as small as fixing grammar or adding/removing entire sections.
 
 `git` is the ideal tool for tracking changes in a repository of well-structured files. This project aims to translate the XML files into a file tree of individual files and directories mirroring the Code's hierarchy. Because each level of the Code, from the section to the the smallest subclause, occupies its own directory, we can easily leverage `git --diff` to find differences at each of the levels.
 
