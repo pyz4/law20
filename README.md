@@ -29,19 +29,48 @@ To run the example queries (see below), clone this repo and checkout the data br
 > git checkout post-tcja
 ```
 
-Data branches have the following file structure
+The U.S.C Code have the following hierarchy, ordered from top-down.
 
-- **t26**: Title 26, root directory
-  - **s1, s2, ..., s1014, ...**: sections. These would correspond, for example, [Section 1014](https://www.law.cornell.edu/uscode/text/26/1014).
-    - heading: The leading (bolded) text of the section. In [Section 1014](https://www.law.cornell.edu/uscode/text/26/1014), this would be "Basis of property acquired from a decedent
-    - chapeau
-    - content
-    - **subsections** (a), (b), ...
-      - header
-      - chapeau
-      - content
-      - continuation
-    
+Directory Name | Description | Example Result
+---------------|-------------|-----------------
+t26 | Title 26, root directory | 
+section | s1, s2, ..., s1014, ... | "1014"
+subsection | (a), (b), ... | 1014(a): "Except as otherwise provided in this section,..."
+paragraph | (1), (2), ... | 1014(a)(1): "the fair market value of the property..."
+subparagraph | (A), (B), ... | 1014(b)(9)(A): "annuities described in section 72;"
+clause | (i), (ii), ... | 1(g)(2)(A)(i): "has not attained age 18..."
+subclause | (I), (II), ... | 1(g)(2)(A)(i)(I): "has attained age 18 before..."
+
+These form the directories in each of the data branches. The text of the statutes themselves are stored in files representing each of the components of the text. The components are shown in the table below. Note that not all components are substantive law.
+
+Component | Description | Substantive Law?
+------- | ---- | ----
+`heading` | bold leading text | No
+`chapeau` | preamble when there are sub-provisions | Yes
+`content` | text of the provision itself | Yes
+`continuation` | follow-on text when the content is broken into pieces | Yes
+
+Below gives an example of [1(g)(7)](https://www.law.cornell.edu/uscode/text/26/1) (one of the few paragraphs that cover all the levels of the hierarchy).
+
+```
+s1/g/2
+├── A
+│   ├── chapeau: "such child—"
+│   ├── i
+│   │   └── content: "has not attained age 18 before the close of the taxable year, or"
+│   └── ii
+│       ├── I
+│       │   └── content: "has attained age 18 before the close of the taxable year..."
+│       └── II
+│           └── content: "whose earned income (as defined in section 911(d)(2))..."
+├── B
+│   └── content: "either parent of such child is alive at the close of the taxable year, and"
+├── C
+│   └── content: "such child does not file a joint return for the taxable year."
+├── chapeau: "This subsection shall apply to any child for any taxable year if—"
+└── heading: "Child to whom subsection applies"
+```
+
 
 ## Example Queries
 
