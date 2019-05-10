@@ -33,7 +33,7 @@ Data branches have the following file structure
 
 - **t26**: Title 26, root directory
   - **s1, s2, ..., s1014, ...**: sections. These would correspond, for example, [Section 1014](https://www.law.cornell.edu/uscode/text/26/1014).
-    - header
+    - heading: The leading (bolded) text of the section. In [Section 1014](https://www.law.cornell.edu/uscode/text/26/1014), this would be "Basis of property acquired from a decedent
     - chapeau
     - content
     - **subsections** (a), (b), ...
@@ -83,13 +83,4 @@ t26/s1/j/1/heading
 ## Interesting Statistics
 
 ## Next Steps
-
-This repository holds several branches, each containing a version of the Internal Revenue Code. The branches and their descriptions are as follows:
-
-- pre-tcja (Internal Revenue Code as of January 2018)
-- post-tcja (Internal Revenue Code as of April 2019)
-
-Each segment of the code (i.e. section, subsection, paragraph, subparagraph, clause, subclause) are stored as individual directories.
-
-You can leverage `git` to find changes and differences between these two versions of the Code. For example, the following command will show you all new provisions added as a result of the Tax Cut and Jobs Act.
 
